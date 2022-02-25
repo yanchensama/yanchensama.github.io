@@ -146,39 +146,76 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Windows下java、tomcat、maven配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/02/06/hello-world/">Hello World</a>
+      <a class="article-title" href="/2022/02/18/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/">Windows下java、tomcat、maven配置</a>
     </h1>
   
 
         
-        <a href="/2022/02/06/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-06T06:22:42.698Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-06</time>
+        <a href="/2022/02/18/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2022-02-17T18:18:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2><p>系统属性环境变量：</p>
+<ul>
+<li><p>变量名：<code>JAVA_HOME</code></p>
+</li>
+<li><p>变量值:   安装位置</p>
+</li>
+<li><p>变量名：<code>CLASSPATH</code></p>
+</li>
+<li><p>变量值：<code>.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar; </code></p>
+</li>
+<li><p>变量名：PATH</p>
+</li>
+<li><p>变量值：<code>%JAVA_HOME%\bin</code>   <code>%JAVA_HOME%\jre\bin</code></p>
+</li>
+</ul>
+<h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><p>系统属性环境变量：</p>
+<ul>
+<li><p>变量名：<code>M2_HOME</code></p>
+</li>
+<li><p>变量值:   安装位置</p>
+</li>
+<li><p>变量名：PATH</p>
+</li>
+<li><p>变量值：<code>%M2_HOME%\bin</code></p>
+</li>
+</ul>
+<p>配置镜像源：<img src="/../assets/img/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/image-20220218025633734.png" alt="image-20220218025633734"></p>
+<p><img src="/../assets/img/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/image-20220218030436964.png" alt="image-20220218030436964"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">    &lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">    &lt;name&gt;aliyun maven&lt;/name&gt;</span><br><span class="line">    &lt;url&gt;http://maven.aliyun.com/nexus/content/repositories/central/&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>配置本地仓库地址（默认又不是不行）：</p>
+<p><img src="/../assets/img/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/image-20220218030609040.png" alt="image-20220218030609040"></p>
+<p>修改maven默认jdk版本：</p>
+<p><img src="/../assets/img/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/image-20220218030943033.png" alt="image-20220218030943033"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;     </span><br><span class="line">    &lt;id&gt;JDK-1.8&lt;/id&gt;       </span><br><span class="line">    &lt;activation&gt;       </span><br><span class="line">        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;       </span><br><span class="line">        &lt;jdk&gt;1.8&lt;/jdk&gt;       </span><br><span class="line">    &lt;/activation&gt;       </span><br><span class="line">    &lt;properties&gt;       </span><br><span class="line">        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;       </span><br><span class="line">        &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;       </span><br><span class="line">        &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;       </span><br><span class="line">    &lt;/properties&gt;       </span><br><span class="line">&lt;/profile&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul>
+<li><p>变量名：<code>CATALINA_BASE</code></p>
+</li>
+<li><p>变量值：安装位置</p>
+</li>
+<li><p>变量名：<code>CATALINA_HOME</code></p>
+</li>
+<li><p>变量值：安装位置</p>
+</li>
+<li><p>变量名：<code>Path</code></p>
+</li>
+<li><p>变量值：<code>;%CATALINA_HOME%\lib;%CATALINA_HOME%\bin</code></p>
+</li>
+</ul>
 
       
 
@@ -187,11 +224,30 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/06/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/02/18/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/">展开全文 >></a>
         </p>
       
 
@@ -221,6 +277,914 @@
 
 
   
+    <article id="post-SpringMVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/17/SpringMVC/">SpringMVC</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/17/SpringMVC/" class="archive-article-date">
+  	<time datetime="2022-02-17T13:52:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一个springMVC程序"><a href="#第一个springMVC程序" class="headerlink" title="第一个springMVC程序"></a>第一个springMVC程序</h2><blockquote>
+<p>该篇是讲使用maven，tomcat的springmvc程序</p>
+</blockquote>
+<p>pom文件添加springMVC框架和commons-logging（spring依赖）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- https://mvnrepository.com/artifact/commons-logging/commons-logging --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>先是在web.xml文件下修改,成使用DispatcherServlet类分发</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">version</span>=<span class="string">&quot;2.4&quot;</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://java.sun.com/xml/ns/j2ee</span></span></span><br><span class="line"><span class="string"><span class="tag">http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>MyFirstServletName<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--      springMVC配置位置参数--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:MyFirstServletName-servlet.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    启动顺序 ，数字越小，优先级越高--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--拦截所有访问--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>MyFirstServletName<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后是在<strong>resources</strong>目录中创建<strong>MyFirstServletName-servlet.xml</strong>(注意后缀名是-servlet.xml)，添加你的控制器文件到beans列表中，springMVC才能找到controller文件开始初始化</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">&quot;com.yc.controller.MyFirstSpringController&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在<strong>src&#x2F;java&#x2F;com.xxx.controller</strong>目录下创建你的controller文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yc.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyFirstSpringController</span> &#123;</span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/hello&quot;, method = RequestMethod.GET)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="meta">@ResponseBody</span> String <span class="title function_">Hello</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, SpringMVC.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用Annotation简化，@Controller标记为控制器文件。通过 <code>@RequestMapping</code> 和 <code>@ResponseBody</code> 我们将一个普通函数标记成<strong>可以处理 GET 请求，同时返回字符串的 Handler。</strong></p>
+<blockquote>
+<p>在 Controller 类中，对于请求的分发处理，<code>@RequestMapping</code> 的作用很明显。在初始化 Controller 的时候，SpringMVC 把 <code>@RequestMapping</code> 注解当中的信息进行处理，之后就可以根据这些信息，把请求分发到对应的 Controller 当中的对应方法里。</p>
+<p><code>@ResponseBody</code> 表明函数的返回值应该被用作 HTTP 返回的 body 处理。SpringMVC 用我们返回的字符串生成 HTTP 响应，返回给了客户端。</p>
+</blockquote>
+<p>使用tomcat访问 …&#x2F;hello。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">springmvc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/17/SpringMVC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaWeb概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/17/JavaWeb%E6%A6%82%E5%BF%B5/">JavaWeb概念</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/17/JavaWeb%E6%A6%82%E5%BF%B5/" class="archive-article-date">
+  	<time datetime="2022-02-17T12:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaEE"><a href="#JavaEE" class="headerlink" title="JavaEE"></a>JavaEE</h2><p>JavaEE全称Java Platform, Enterprise Edition，是对javaSE的扩展，加入了对web和网络的有关支持(Servlet，websocket等),即javaEE&#x3D;javaSE+更多的jar包</p>
+<h2 id="Servlet和ServletContainer"><a href="#Servlet和ServletContainer" class="headerlink" title="Servlet和ServletContainer"></a>Servlet和ServletContainer</h2><p>Servlet是用于处理http请求的api标准，使用Servlet Container（tomcat，apache等）才可以运行Servlet</p>
+<h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><p>Spring 是框架，包括SpringMVC，SpringBooot以及SpringCLoud等web开发工具，可直接在Servlet基础上运行</p>
+<h2 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h2><p>直接使用Servlet也可以生成网页，但是代码写起来苦难且维护性不高，为此引入JSP技术把非逻辑的部分抽离出来，JSP是高度抽象的Servelt，JSP运行时也是被编译成Servlet（他们的差别就像是Servlet是用java写网页内容而JSP是用HTML+JAVA写网页）</p>
+<p>这是Servlet写网页的代码：这是JSP写网页的代码：</p>
+<center class="half">
+    <img src="../assets/img/JavaWeb概念/image-20220217213651207.png" alt="image-20220217213651207"  width="300"/>
+    <img src="../assets/img/JavaWeb概念/image-20220217213712459.png" width="300"/>
+</center>
+
+
+
+<h2 id="WEB-INF"><a href="#WEB-INF" class="headerlink" title="WEB-INF"></a>WEB-INF</h2><p>工程目录下的WEB-INF作用是将文件拷贝到Tomcat的部署目录下，如果愿意直接在Tomcat部署目录操作，可以不写</p>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>构建在MVC基础之上的框架，与Servlet API差别是提供了一个DispatcherServlet类（翻译：调度Servlet），是一个对于请求处理的分发器（中转站），由DispatcherServlet将Servlet传递的请求根据URL分发给对应的Controller，避免了web.xml配置了太多的url-pattern导致一片混乱</p>
+<h2 id="ioC-控制反转"><a href="#ioC-控制反转" class="headerlink" title="ioC(控制反转)"></a>ioC(<strong>控制反转</strong>)</h2><img src="../assets/img/JavaWeb概念/image-20220222225652657.png" alt="image-20220222225652657" style="zoom:50%;" />
+
+<img src="../assets/img/JavaWeb概念/image-20220222225708178.png" alt="image-20220222225708178" style="zoom:50%;" />
+
+<h2 id="SpringioC"><a href="#SpringioC" class="headerlink" title="SpringioC"></a>SpringioC</h2><h2 id="Spring-Bean"><a href="#Spring-Bean" class="headerlink" title="Spring Bean"></a>Spring Bean</h2><p>Spring 中把由 SpringioC Container 管理的对象，称为 <strong>Bean</strong>。</p>
+<blockquote>
+<p>在 《Java 核心技术(卷2)》中，作者引用了 Sun 公司文档的定义，把可重用的 Java 组件称为 Bean，注意不要和本文的 Bean 定义混淆。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/17/JavaWeb%E6%A6%82%E5%BF%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Blog图片显示问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/16/Blog%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">Blog图片显示问题</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/16/Blog%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-02-16T12:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="图片使用本地路径导致blog图片不显示"><a href="#图片使用本地路径导致blog图片不显示" class="headerlink" title="图片使用本地路径导致blog图片不显示"></a>图片使用本地路径导致blog图片不显示</h4><p>在typora的设置中，可修改粘贴的图片存放位置，修改到hexo资源文件夹内某处，在typora中使用相对位置查找图片</p>
+<p><img src="/../assets/img/Blog%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/image-20220216205152061.png" alt="image-20220216205152061"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/16/Blog%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-linux下-opt和-usr-local目录的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/14/linux%E4%B8%8B-opt%E5%92%8C-usr-local%E7%9B%AE%E5%BD%95%E7%9A%84%E5%8C%BA%E5%88%AB/">linux下/opt和/usr/local目录的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/14/linux%E4%B8%8B-opt%E5%92%8C-usr-local%E7%9B%AE%E5%BD%95%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+  	<time datetime="2022-02-14T14:05:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux-程序安装目录-x2F-opt-和-x2F-usr-x2F-local-的区别"><a href="#Linux-程序安装目录-x2F-opt-和-x2F-usr-x2F-local-的区别" class="headerlink" title="Linux 程序安装目录 &#x2F;opt 和 &#x2F;usr&#x2F;local 的区别"></a>Linux 程序安装目录 &#x2F;opt 和 &#x2F;usr&#x2F;local 的区别</h1><p>&#x2F;usr&#x2F;local 目录和 &#x2F;opt 目录都是用来安装第三方软件的目录，所谓第三方软件其实就是用户自己安装的软件，区别于安装系统时自带的软件。</p>
+<ul>
+<li>&#x2F;usr&#x2F;local 下一般是你安装软件的目录，这个目录就相当于在windows下的programefiles这个目录；</li>
+<li>&#x2F;opt 这个目录是一些大型软件的安装目录，或者是一些服务程序的安装目录。</li>
+</ul>
+<p><code>/usr</code>：系统级的目录，可以理解为<code>C:/Windows/</code>，<code>/usr/lib</code>理解为<code>C:/Windows/System32</code>。<br><code>/usr/local</code>：用户级的程序目录，可以理解为<code>C:/Progrem Files/</code>。用户自己编译的软件默认会安装到这个目录下。<br><code>/opt</code>：用户级的程序目录，可以理解为<code>D:/Software</code>，opt有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接<code>rm -rf</code>掉即可。在硬盘容量不够时，也可将&#x2F;opt单独挂载到其他磁盘上使用。</p>
+<p>&#x2F;usr&#x2F;local和&#x2F;opt不同的是，&#x2F;usr&#x2F;local命令下面的一些子目录往往都是被加入到PATH环境变量中的（PATH中默认就有&#x2F;usr&#x2F;local&#x2F;bin，可以使用echo $PATH查看），而&#x2F;opt目录则没有在PATH环境变量中，这样安装在&#x2F;usr&#x2F;local目录下的软件就可以在命令行执行、启动。</p>
+<p>但是这也不是绝对的，也可以把需要命令启动的软件安装在&#x2F;opt目录，然后在&#x2F;usr&#x2F;local&#x2F;bin目录建立一个链接文件，这样同样可以命令启动这个软件，网上许多Linux软件安装教程都会采用这个方法。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tips</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/14/linux%E4%B8%8B-opt%E5%92%8C-usr-local%E7%9B%AE%E5%BD%95%E7%9A%84%E5%8C%BA%E5%88%AB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-WSL安装配置MySQL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/14/WSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMySQL/">WSL安装配置MySQL</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/14/WSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMySQL/" class="archive-article-date">
+  	<time datetime="2022-02-13T18:44:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-client mysql-server</span><br></pre></td></tr></table></figure>
+
+<p>启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/mysql start</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/14/WSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMySQL/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-WSL配置java、maven、tomcat环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/">WSL配置java、maven、tomcat环境</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+  	<time datetime="2022-02-13T13:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装java-maven"><a href="#安装java-maven" class="headerlink" title="安装java,maven"></a>安装java,maven</h2><p><code>sudo apt-get update</code> 更新索引</p>
+<h4 id="1-apt安装"><a href="#1-apt安装" class="headerlink" title="1.apt安装"></a>1.apt安装</h4><p><code>sudo apt install openjdk-8-jdk</code>安装jdk8</p>
+<p><del><code>sudo apt install maven</code>安装maven(idea不认同这个😂)</del></p>
+<h4 id="2-手动安装"><a href="#2-手动安装" class="headerlink" title="2.手动安装"></a>2.手动安装</h4><h6 id="java"><a href="#java" class="headerlink" title="java:"></a>java:</h6><p><code>wget https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/linux/OpenJDK8U-jdk_x64_linux_hotspot_8u322b06.tar.gz</code>下载</p>
+<p><code>tar -zxvf OpenJDK8U-jdk_x64_linux_hotspot_8u322b06.tar.gz /usr/local/java/</code>  解压到自定义路径</p>
+<p>手动安装需要配置环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk8u322-b06</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=.:$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p><code>java -version</code> 查看安装</p>
+<h6 id="maven"><a href="#maven" class="headerlink" title="maven:"></a>maven:</h6><p><code>wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz</code>手动下载maven</p>
+<p><code>sudo tar -zxvf apache-maven-3.8.4-bin.tar.gz /usr/local/maven</code>解压到自定义路径</p>
+<p>在<code>~/.zshrc</code>文件添加以下内容，使其可在zsh下调用(bash用户则修改~&#x2F;.profile)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export M2_HOME=/usr/local/maven/apache-maven-3.8.4</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;M2_HOME&#125;/bin</span><br></pre></td></tr></table></figure>
+
+<p><code>mvn -version</code>查看安装</p>
+<h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><p><code> wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz</code> 手动下载tomcat安装包（apt install安装的位置过于分散，试过了，不会搞）</p>
+<p><code>tar -zxvf apache-tomcat-9.0.58.tar.gz /usr/local/tomcat</code> 解压安装包到自定义的目录</p>
+<p><code>sudo chmod -R 777 /usr/local/tomcat/apache-tomcat-9.0.58</code>给文件夹子文件访问和执行权限</p>
+<p><code>cd /usr/local/tomcat/apache-tomcat-9.0.58/bin</code></p>
+<p><code>sh startup.sh</code>执行启动脚本</p>
+<p>可在默认8080端口访问到tomcat页面</p>
+<h2 id="配置maven路径-idea-失败）"><a href="#配置maven路径-idea-失败）" class="headerlink" title="配置maven路径-idea(失败）"></a>配置maven路径-idea(失败）</h2><h2 id="idea2021-2-3仍不支持读取wsl内环境变量"><a href="#idea2021-2-3仍不支持读取wsl内环境变量" class="headerlink" title="idea2021.2.3仍不支持读取wsl内环境变量)"></a>idea2021.2.3仍不支持读取wsl内环境变量)</h2><p>idea还是很智能的，能自动检测wsl中的jdk</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220213211054185.png" alt="image-20220213211054185"></p>
+<p>但maven则需要手动修改了，否则用的是idea自己的maven</p>
+<p><code>ctrl+alt+s</code>呼出设置，找到maven设置，</p>
+<p>修改<code>maven home path</code> 为<code>\\wsl$\Ubuntu\usr\local\maven\...</code></p>
+<p><code>User settings file</code> 在 <code>/etc/maven/settings.xml</code> 有默认配置文件，建议和仓库一起建到用户目录下，如上图所示位置（其实只是我root目录下权限问题搞不定😂）</p>
+<p>等idea优化后再写</p>
+<h2 id="配置code（推荐）"><a href="#配置code（推荐）" class="headerlink" title="配置code（推荐）"></a>配置code（推荐）</h2><p>前提，code的话，也只是用调用linux终端运行项目，idea也能做到，提示还不能像idea那么智能，只不过code开的快，且占用小，毕竟都是微软家的东西，相信优化的会比idea更快到来。</p>
+<p>安装wsl连接工具<code>Remote-WSL</code></p>
+<p>在wsl内安装官方Java扩展插件<code>Extension pack for java</code>，下得贼慢，不会处理</p>
+<p>使用<code>ctrl+shift+p</code>搜索create java就可以创建java项目了</p>
+<p>tomcat项目需要安装 <code>tomcat for java</code>插件</p>
+<p>安装后在code资源管理器可以看到</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216031821768.png" alt="image-20220216031821768"></p>
+<p>点击加号添加tomcat路径，如<code>/usr/local/tomcat/apache-tomcat-9.0.58</code>,右键该tomcat服务器，选择start，由红变绿（报错的话，可能是端口占用，请先确保原8080端口没有tomcat服务启动），成功后可以在8080看到</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032403459.png" alt="image-20220216032403459"></p>
+<p>在打包好的maven项目</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032508966.png" alt="image-20220216032508966"></p>
+<p>右键demo.war选择run on tomcat server ，即可在8080端口完成部署</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032726514.png" alt="image-20220216032726514"></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.由于使用的是linux下的jdk，项目地址也应保存在wsl2的文件目录下，否则可能会报错</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nginx服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/12/nginx%E6%9C%8D%E5%8A%A1/">nginx服务</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/12/nginx%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2022-02-11T19:07:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx	</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务"></a>配置服务</h2><p><code>/etc/nginx/nginx.conf</code>文件为默认配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#全局块</span><br><span class="line">#user  nobody;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">#event块</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#http块</span><br><span class="line">http &#123;</span><br><span class="line">    #http全局块</span><br><span class="line">    include       mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line">    sendfile        on;</span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line">    #server块</span><br><span class="line">    server &#123;</span><br><span class="line">        #server全局块</span><br><span class="line">        listen       8000;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        #location块</span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">        error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #这边可以有多个server块</span><br><span class="line">    server &#123;</span><br><span class="line">      ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>可将自己的配置文件写入<code>/etc/nginx/conf.d/</code>目录下,nginx.conf会将该文件夹下配置文件引入</p>
+<p>创建 servers.conf文件用来创建虚拟服务器</p>
+<p>通常<code>server</code>指令中会包含一条<code>listen</code>指令，用于指定该虚拟服务器将要监听的<code>IP地址和端口</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 1234;</span><br><span class="line">    # 其他配置</span><br><span class="line">    server_name  localhost; ##你的域名</span><br><span class="line">    location / &#123;</span><br><span class="line">    root   your root dirname;　　#你的项目入口绝对路径(~不是绝对)</span><br><span class="line">    index  index.html index.php index.htm;#入口可以解析的文件类型 如果有需要，可以吧index.html/php/htm改成自己需要的文件名和类型</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="WSL启动、重启、停止-Nginx"><a href="#WSL启动、重启、停止-Nginx" class="headerlink" title="WSL启动、重启、停止 Nginx"></a>WSL启动、重启、停止 Nginx</h2><p>Nginx 是以服务的形式运行的，我们可以使用 <code>service</code> 命令来控制它的启停,但不可以使用systemctl，没有权限：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx start  或 sudo nginx  # 启动 Nginx  </span><br><span class="line">sudo service nginx restart # 重启 Nginx</span><br><span class="line">sudo service nginx stop # 停止 Nginx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/12/nginx%E6%9C%8D%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-使用hexo创建个人Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BABlog/">使用hexo创建个人Blog</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BABlog/" class="archive-article-date">
+  	<time datetime="2022-02-10T17:10:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li><p>node.js   <a target="_blank" rel="noopener" href="http://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a></p>
+</li>
+<li><p>git  <a target="_blank" rel="noopener" href="https://git-scm.com/">Git (git-scm.com)</a></p>
+</li>
+</ul>
+<p>输入 <code>node -v</code> 和 <code>git --version</code> 查看是否安装完成</p>
+<h2 id="使用-hexo-创建网页"><a href="#使用-hexo-创建网页" class="headerlink" title="使用 hexo 创建网页"></a>使用 hexo 创建网页</h2><p><code>npm install hexo-cli</code> 命令安装hexo</p>
+<p><code>hexo init name</code> 初始化hexo项目目录</p>
+<p>在项目目录下使用  <code>npm install </code>  安装依赖模块</p>
+<p><code>hexo g</code>  生成网站的静态文件</p>
+<p>使用 <code>hexo s</code> 在本地运行</p>
+<h2 id="配置网页内容"><a href="#配置网页内容" class="headerlink" title="配置网页内容"></a>配置网页内容</h2><p>在 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/themes.html">主题 | Hexo</a>  或 github 找个适合的(最好是中文，不然看不懂😂)主题 git clone 到主题文件夹下</p>
+<p>通过配置文件<code>_config.yml</code> 选择刚下载的主题并修改一些基础信息</p>
+<p>修改主题文件夹下的 <code>_config.yml</code> 文件编辑网页的样式</p>
+<p>通过 <code>hexo new &quot;name&quot;</code> 生成md文件(blog文章) </p>
+<h2 id="使用github-发布blog"><a href="#使用github-发布blog" class="headerlink" title="使用github 发布blog"></a>使用github 发布blog</h2><p>在github上创建仓库名为<code>用户名.github.io</code>的<code>公开</code>仓库（不公开不行，后期也不能关，关了在打开也不行）</p>
+<p>使用 <code>npm install hexo -deployer-git --save</code>命令安装deployer模块</p>
+<p>打开的Hexo项目文件夹下的<code>_config.yml</code>文件找到 <code>deploy:</code> 添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: https://github.com/你的用户名/你的用户名.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p>回到hexo目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean           #清除缓存      	   可缩写hexo c</span><br><span class="line">hexo generate        #生成静态文件          可缩写hexo g</span><br><span class="line">hexo deploy        	 #部署到github远程仓库  可缩写hexo d</span><br></pre></td></tr></table></figure>
+
+<p>地址栏输入github用户名.github.io即可看到blog了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BABlog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-WSL-Windows终端" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/10/WSL-Windows%E7%BB%88%E7%AB%AF/">WSL-Windows终端</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/10/WSL-Windows%E7%BB%88%E7%AB%AF/" class="archive-article-date">
+  	<time datetime="2022-02-10T05:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="WSL-Windows终端"><a href="#WSL-Windows终端" class="headerlink" title="WSL-Windows终端"></a>WSL-Windows终端</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li><p><code>CMD</code></p>
+<p>经典又丑陋的小黑框</p>
+</li>
+<li><p><code>Windows Terminal</code></p>
+<p>基于 .Net Framework 开发的替代cmd的工具，增强版cmd</p>
+</li>
+<li><p><code>Windows Terminal</code></p>
+<p>PowerShell、CMD  、WSL 三大环境实现了统一的终端</p>
+</li>
+</ul>
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><ul>
+<li><h3 id="透明化"><a href="#透明化" class="headerlink" title="透明化"></a>透明化</h3></li>
+</ul>
+<p>打开设置文件settings.json,找到这段代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;defaults&quot;:</span><br><span class="line">        &#123;</span><br><span class="line">            // Put settings here that you want to apply to all profiles.</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>添加以下代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;useAcrylic&quot;: true, //毛玻璃特效的开关</span><br><span class="line">&quot;acrylicOpacity&quot;: 0.7 //透明度的设置，设置为“0”是全透明，“1”是不透明</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3></li>
+</ul>
+<p>在对应终端的中括号内添加，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">               &quot;guid&quot;: &quot;&#123;2c4de342-38b7-51cf-b940-2309a097f518&#125;&quot;,</span><br><span class="line">               &quot;hidden&quot;: false,</span><br><span class="line">               &quot;name&quot;: &quot;Ubuntu&quot;,</span><br><span class="line">               &quot;source&quot;: &quot;Windows.Terminal.Wsl&quot;,</span><br><span class="line">               &quot;icon&quot;: &quot;图标地址&quot;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装oh-my-zsh-Ubuntu"><a href="#安装oh-my-zsh-Ubuntu" class="headerlink" title="安装oh-my-zsh(Ubuntu)"></a>安装oh-my-zsh(Ubuntu)</h2><p>安装并切换到zsh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br><span class="line">chsh -s /bin/zsh </span><br></pre></td></tr></table></figure>
+
+<p>重新打开就会发现已经是zsh的样子了</p>
+<p>然后安装oh-my-zsh</p>
+<p>下面的是自动安装脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>不行很大可能是github被墙了</p>
+<p>试试手动安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/skillf-qf/ohmyzsh.git</span><br><span class="line">cd ./ohmyzsh/tools/</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+
+<p>这边放一份2022.2.10的安装脚本<a href="/WSL-Windows%E7%BB%88%E7%AB%AF/install.sh">install</a>(出现set: Illegal option -就是你在windows下打开了，编码方式变了，复制内容到Linux下在执行)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo sh ./install.sh</span><br><span class="line">#替换zsh</span><br><span class="line">export ZSH=&quot;$HOME/.oh-my-zsh&quot; </span><br></pre></td></tr></table></figure>
+
+<p>然后就好啦</p>
+<p>然后是添加插件，我一般开三个，一个语法高亮，一个命令提示，一个自带的补全sudo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $HOME/.oh-my-zsh/plugins</span><br><span class="line">#下载代码</span><br><span class="line">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git</span><br><span class="line">#自动配置</span><br><span class="line">echo &quot;source $&#123;(q-)PWD&#125;/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&quot; &gt;&gt; $&#123;ZDOTDIR:-$HOME&#125;/.zshrc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd $HOME/.oh-my-zsh/plugins</span><br><span class="line">#下载代码</span><br><span class="line">git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+
+<p>编辑~&#x2F;.zshrc在plugin（git）中添加 zsh-autosuggestions ，sudo</p>
+<p>添加history时间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">code ~/.zshrc</span><br><span class="line">#HIST_STAMPS=&quot;yyyy-mm-dd&quot;取消注释</span><br></pre></td></tr></table></figure>
+
+<p>最后</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>至此完成zsh配置</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/10/WSL-Windows%E7%BB%88%E7%AB%AF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -312,6 +1276,58 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">javaweb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">springmvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tips</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

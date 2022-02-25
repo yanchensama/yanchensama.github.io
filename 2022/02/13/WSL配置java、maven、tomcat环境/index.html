@@ -6,17 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yanchensama.github.io">
-  <title>Archives: 2022 | a blog</title>
+  <title>WSL配置java、maven、tomcat环境 | a blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重零开始搭blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="a blog">
-<meta property="og:url" content="http://yanchensama.github.io/archives/2022/index.html">
+  <meta name="description" content="安装java,mavensudo apt-get update 更新索引 1.apt安装sudo apt install openjdk-8-jdk安装jdk8 sudo apt install maven安装maven(idea不认同这个😂) 2.手动安装java:wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;AdoptOpenJDK&#x2F;8&#x2F;jdk&#x2F;x64&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WSL配置java、maven、tomcat环境">
+<meta property="og:url" content="http://yanchensama.github.io/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="a blog">
-<meta property="og:description" content="重零开始搭blog">
+<meta property="og:description" content="安装java,mavensudo apt-get update 更新索引 1.apt安装sudo apt install openjdk-8-jdk安装jdk8 sudo apt install maven安装maven(idea不认同这个😂) 2.手动安装java:wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;AdoptOpenJDK&#x2F;8&#x2F;jdk&#x2F;x64&#x2F;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yanchensama.github.io/assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220213211054185.png">
+<meta property="og:image" content="http://yanchensama.github.io/assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216031821768.png">
+<meta property="og:image" content="http://yanchensama.github.io/assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032403459.png">
+<meta property="og:image" content="http://yanchensama.github.io/assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032508966.png">
+<meta property="og:image" content="http://yanchensama.github.io/assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032726514.png">
+<meta property="article:published_time" content="2022-02-13T13:00:32.000Z">
+<meta property="article:modified_time" content="2022-02-16T12:44:02.800Z">
 <meta property="article:author" content="To0">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="maven">
+<meta property="article:tag" content="tomcat">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yanchensama.github.io/assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220213211054185.png">
   
     <link rel="alternative" href="/atom.xml" title="a blog" type="application/atom+xml">
   
@@ -144,304 +156,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-WSL配置java、maven、tomcat环境" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/18/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2022-02-17T18:18:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/18/Windows%E4%B8%8Bjava%E3%80%81tomcat%E3%80%81maven%E9%85%8D%E7%BD%AE/">Windows下java、tomcat、maven配置</a>
+    <h1 class="article-title" itemprop="name">
+      WSL配置java、maven、tomcat环境
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/17/SpringMVC/" class="archive-article-date">
-  	<time datetime="2022-02-17T13:52:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/17/SpringMVC/">SpringMVC</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">springmvc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/17/JavaWeb%E6%A6%82%E5%BF%B5/" class="archive-article-date">
-  	<time datetime="2022-02-17T12:46:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/17/JavaWeb%E6%A6%82%E5%BF%B5/">JavaWeb概念</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/16/Blog%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2022-02-16T12:47:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/16/Blog%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/">Blog图片显示问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/14/linux%E4%B8%8B-opt%E5%92%8C-usr-local%E7%9B%AE%E5%BD%95%E7%9A%84%E5%8C%BA%E5%88%AB/" class="archive-article-date">
-  	<time datetime="2022-02-14T14:05:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/14/linux%E4%B8%8B-opt%E5%92%8C-usr-local%E7%9B%AE%E5%BD%95%E7%9A%84%E5%8C%BA%E5%88%AB/">linux下/opt和/usr/local目录的区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">tips</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/14/WSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMySQL/" class="archive-article-date">
-  	<time datetime="2022-02-13T18:44:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/14/WSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMySQL/">WSL安装配置MySQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+        
+        <a href="/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/" class="archive-article-date">
   	<time datetime="2022-02-13T13:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-13</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/">WSL配置java、maven、tomcat环境</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装java-maven"><a href="#安装java-maven" class="headerlink" title="安装java,maven"></a>安装java,maven</h2><p><code>sudo apt-get update</code> 更新索引</p>
+<h4 id="1-apt安装"><a href="#1-apt安装" class="headerlink" title="1.apt安装"></a>1.apt安装</h4><p><code>sudo apt install openjdk-8-jdk</code>安装jdk8</p>
+<p><del><code>sudo apt install maven</code>安装maven(idea不认同这个😂)</del></p>
+<h4 id="2-手动安装"><a href="#2-手动安装" class="headerlink" title="2.手动安装"></a>2.手动安装</h4><h6 id="java"><a href="#java" class="headerlink" title="java:"></a>java:</h6><p><code>wget https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/linux/OpenJDK8U-jdk_x64_linux_hotspot_8u322b06.tar.gz</code>下载</p>
+<p><code>tar -zxvf OpenJDK8U-jdk_x64_linux_hotspot_8u322b06.tar.gz /usr/local/java/</code>  解压到自定义路径</p>
+<p>手动安装需要配置环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk8u322-b06</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=.:$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<p><code>java -version</code> 查看安装</p>
+<h6 id="maven"><a href="#maven" class="headerlink" title="maven:"></a>maven:</h6><p><code>wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz</code>手动下载maven</p>
+<p><code>sudo tar -zxvf apache-maven-3.8.4-bin.tar.gz /usr/local/maven</code>解压到自定义路径</p>
+<p>在<code>~/.zshrc</code>文件添加以下内容，使其可在zsh下调用(bash用户则修改~&#x2F;.profile)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export M2_HOME=/usr/local/maven/apache-maven-3.8.4</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;M2_HOME&#125;/bin</span><br></pre></td></tr></table></figure>
+
+<p><code>mvn -version</code>查看安装</p>
+<h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><p><code> wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-9/v9.0.58/bin/apache-tomcat-9.0.58.tar.gz</code> 手动下载tomcat安装包（apt install安装的位置过于分散，试过了，不会搞）</p>
+<p><code>tar -zxvf apache-tomcat-9.0.58.tar.gz /usr/local/tomcat</code> 解压安装包到自定义的目录</p>
+<p><code>sudo chmod -R 777 /usr/local/tomcat/apache-tomcat-9.0.58</code>给文件夹子文件访问和执行权限</p>
+<p><code>cd /usr/local/tomcat/apache-tomcat-9.0.58/bin</code></p>
+<p><code>sh startup.sh</code>执行启动脚本</p>
+<p>可在默认8080端口访问到tomcat页面</p>
+<h2 id="配置maven路径-idea-失败）"><a href="#配置maven路径-idea-失败）" class="headerlink" title="配置maven路径-idea(失败）"></a>配置maven路径-idea(失败）</h2><h2 id="idea2021-2-3仍不支持读取wsl内环境变量"><a href="#idea2021-2-3仍不支持读取wsl内环境变量" class="headerlink" title="idea2021.2.3仍不支持读取wsl内环境变量)"></a>idea2021.2.3仍不支持读取wsl内环境变量)</h2><p>idea还是很智能的，能自动检测wsl中的jdk</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220213211054185.png" alt="image-20220213211054185"></p>
+<p>但maven则需要手动修改了，否则用的是idea自己的maven</p>
+<p><code>ctrl+alt+s</code>呼出设置，找到maven设置，</p>
+<p>修改<code>maven home path</code> 为<code>\\wsl$\Ubuntu\usr\local\maven\...</code></p>
+<p><code>User settings file</code> 在 <code>/etc/maven/settings.xml</code> 有默认配置文件，建议和仓库一起建到用户目录下，如上图所示位置（其实只是我root目录下权限问题搞不定😂）</p>
+<p>等idea优化后再写</p>
+<h2 id="配置code（推荐）"><a href="#配置code（推荐）" class="headerlink" title="配置code（推荐）"></a>配置code（推荐）</h2><p>前提，code的话，也只是用调用linux终端运行项目，idea也能做到，提示还不能像idea那么智能，只不过code开的快，且占用小，毕竟都是微软家的东西，相信优化的会比idea更快到来。</p>
+<p>安装wsl连接工具<code>Remote-WSL</code></p>
+<p>在wsl内安装官方Java扩展插件<code>Extension pack for java</code>，下得贼慢，不会处理</p>
+<p>使用<code>ctrl+shift+p</code>搜索create java就可以创建java项目了</p>
+<p>tomcat项目需要安装 <code>tomcat for java</code>插件</p>
+<p>安装后在code资源管理器可以看到</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216031821768.png" alt="image-20220216031821768"></p>
+<p>点击加号添加tomcat路径，如<code>/usr/local/tomcat/apache-tomcat-9.0.58</code>,右键该tomcat服务器，选择start，由红变绿（报错的话，可能是端口占用，请先确保原8080端口没有tomcat服务启动），成功后可以在8080看到</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032403459.png" alt="image-20220216032403459"></p>
+<p>在打包好的maven项目</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032508966.png" alt="image-20220216032508966"></p>
+<p>右键demo.war选择run on tomcat server ，即可在8080端口完成部署</p>
+<p><img src="/../assets/img/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/image-20220216032726514.png" alt="image-20220216032726514"></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>1.由于使用的是linux下的jdk，项目地址也应保存在wsl2的文件目录下，否则可能会报错</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝奶茶<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信收款码.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -465,140 +275,114 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yanchensama.github.io/2022/02/13/WSL%E9%85%8D%E7%BD%AEjava%E3%80%81maven%E3%80%81tomcat%E7%8E%AF%E5%A2%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/12/nginx%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2022-02-11T19:07:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2022/02/14/WSL%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMySQL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          WSL安装配置MySQL
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/12/nginx%E6%9C%8D%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nginx服务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/12/nginx%E6%9C%8D%E5%8A%A1/">nginx服务</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BABlog/" class="archive-article-date">
-  	<time datetime="2022-02-10T17:10:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/11/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BABlog/">使用hexo创建个人Blog</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/10/WSL-Windows%E7%BB%88%E7%AB%AF/" class="archive-article-date">
-  	<time datetime="2022-02-10T05:55:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/10/WSL-Windows%E7%BB%88%E7%AB%AF/">WSL-Windows终端</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2022/page/2/">2</a><a class="extend next" rel="next" href="/archives/2022/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -622,8 +406,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
