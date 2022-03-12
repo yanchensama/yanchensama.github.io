@@ -106,7 +106,9 @@ theme: hexo-theme-next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@47.104.75.125:/home/git/repos/blog.git # ip 为服务器ip
+  branch: master
 
 live2d:
   enable: true
