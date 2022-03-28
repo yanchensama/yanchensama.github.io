@@ -3,6 +3,9 @@ title: 使用certbot配置https
 abbrlink: d3ca7562
 date: 2022-03-14 15:26:03
 tags:
+- web
+categories:
+- WEB
 ---
 
 >
@@ -27,11 +30,42 @@ sudo dnf upgrade
 
 - 安装
 
+```
+sudo yum install snapd
+```
+
 ```shell
 sudo systemctl enable --now snapd.socket
 ```
 
 ```bash
 sudo systemctl enable --now snapd.socket
+```
+
+- 更新 snapd
+
+  ```
+  sudo snap install core; sudo snap refresh core
+  ```
+
+## 安装cerbot
+
+```
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+```
+
+- 为nginx安装证书
+
+  ```
+  sudo certbot --nginx
+  ```
+
+  填很多东西。。。
+
+- 自动续订
+
+```
+sudo certbot renew --dry-run
 ```
 
