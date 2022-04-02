@@ -118,6 +118,12 @@ systemctl  stop， start ，restart  docker，老三样
   docker ps 		
   ```
 
+  查看所有容器（包括不在运行的）
+
+  ```
+  docker ps -a
+  ```
+
 - 传递文件
 
   - 向容器内传
