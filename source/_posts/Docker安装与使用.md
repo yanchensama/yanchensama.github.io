@@ -41,6 +41,12 @@ curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d
 yum install docker-ce -y
 ```
 
+非root用户免sudo操作docker：
+
+```
+sudo usermod -aG docker $USER
+```
+
 ## 启动服务
 
 systemctl  stop， start ，restart  docker，老三样
@@ -99,7 +105,19 @@ systemctl  stop， start ，restart  docker，老三样
   docker rmi [镜像id...]
   ```
 
-- 镜像文件路径：`/var/lib/docker/containers`
+- 镜像文件路径(pull操作)：`/var/lib/docker/containers`
+
+- 镜像->镜像tar包
+
+  ```
+  docker save -o xxx.tar 镜像名 
+  ```
+
+  镜像tar ->镜像
+
+  ```
+  docker load -i xxx.tar
+  ```
 
 ## 容器管理
 
@@ -109,7 +127,7 @@ systemctl  stop， start ，restart  docker，老三样
   docker run -it --name webdemo -p 80:8080 tomcat /bin/bash
   ```
 
-  docker 要想开启ssh连接，需要systemctl，而systemctl需要访问内核，所以在启动参数里添加需要特权`--privileged=true`还有个用于启动dbus-daemon的参数`/usr/sbin/init`（会跑码，记得后台 -d）
+  docker 要想开启ssh连接，需要systemctl，而systemctl需要访问内核，所以在启动参数里添加需要特权`--privileged=true`，还有个用于启动dbus-daemon的参数`/usr/sbin/init`（会跑码，记得后台 -d）
 
   （这就是违背docker理念的下场，docker是不推荐额外添加进程的）
 
@@ -121,6 +139,12 @@ systemctl  stop， start ，restart  docker，老三样
 
   ```
   docker build -t linux git@github.com:Jesse121/mylinux.git
+  ```
+
+- doker执行命令
+
+  ```
+  docker exec [容器名/id] ls
   ```
 
 - 进入正在运行的容器
@@ -142,6 +166,12 @@ systemctl  stop， start ，restart  docker，老三样
   docker ps -a
   ```
 
+- 容器改名
+
+  ```
+  docker rename  oldname newname
+  ```
+  
 - 传递文件
 
   - 向容器内传
@@ -187,6 +217,18 @@ systemctl  stop， start ，restart  docker，老三样
 
   ```
   docker rm [容器名/容器id]
+  ```
+
+- 容器 ->容器tar
+
+  ```
+  docker export -o xxx.tar [容器名/容器id]
+  ```
+
+  容器tar->镜像
+
+  ```
+  docker import xxx.tar [容器名/容器id]
   ```
 
 ## 生成镜像
@@ -358,3 +400,7 @@ docker compose down --volumes  #停止并删除所有容器及数据卷
 要修改端口映射，三个方法：1.删了重建重启动，2.旧docker commit到新启动 ，3改配置，最麻烦的
 
 Docker容器后台运行,就必须有一个前台进程。容器运行的命令如果不是那些一直挂起的命令（比如运行top，ping），就是会自动退出的（如/bin/bash）。
+
+docker export/import与docker save/load的区别：
+export/import会丢弃历史记录和元数据信息，仅保存容器当时的快照状态
+save/load会保存完整记录，体积更大
