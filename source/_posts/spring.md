@@ -98,9 +98,31 @@ getBean的两方法
 
 ![image-20220413201748927](/home/joe/.config/Typora/typora-user-images/image-20220413201748927.png)
 
-test1～test4  待截图
+关于数据库连接池的spring使用：
 
+手动设置：
 
+![image-20220414111412972](../assets/img/spring/image-20220414111412972.png)
+
+![image-20220414111427984](../assets/img/spring/image-20220414111427984.png)
+
+依赖配置文件：
+
+![image-20220414111450977](../assets/img/spring/image-20220414111450977.png)
+
+![image-20220414111517329](../assets/img/spring/image-20220414111517329.png)
+
+使用spring
+
+![image-20220414111621769](../assets/img/spring/image-20220414111621769.png)
+
+![image-20220414111530547](../assets/img/spring/image-20220414111530547.png)
+
+使用spring+配置文件
+
+![image-20220414112019897](../assets/img/spring/image-20220414112019897.png)
+
+![image-20220414111530547](../assets/img/spring/image-20220414111530547.png)
 
 ![image-20220414004946332](/home/joe/.config/Typora/typora-user-images/image-20220414004946332.png)
 
@@ -111,3 +133,9 @@ test1～test4  待截图
 ![image-20220414010935767](/home/joe/.config/Typora/typora-user-images/image-20220414010935767.png)
 
 ![image-20220414105909656](../assets/img/spring/image-20220414105909656.png)
+
+注解使用（记得添加扫描组件）：
+
+![image-20220414112119721](../assets/img/spring/image-20220414112119721.png)
+
+![image-20220414112209798](../assets/img/spring/image-20220414112209798.png)
