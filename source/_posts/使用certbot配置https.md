@@ -63,6 +63,12 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
   填很多东西。。。
 
+  重要的是这个（域名填别直接回车，手动填，不然少一个）
+
+  ![image-20220330013216624](../assets/img/使用certbot配置https/image-20220330013216624.png)
+
+  证书安装后会在/etc/nginx/nginx.conf 添加配置，手动去填上项目入口
+
 - 自动续订
 
 ```
