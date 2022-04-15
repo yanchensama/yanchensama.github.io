@@ -1,3 +1,6 @@
+---
+abbrlink: '0'
+---
 ![image-20220412233350542](/home/joe/.config/Typora/typora-user-images/image-20220412233350542.png)
 
 ![image-20220412233951272](/home/joe/.config/Typora/typora-user-images/image-20220412233951272.png)
