@@ -1,5 +1,6 @@
 ---
 title: spring jdbcTemplate
+abbrlink: f0c93e9c
 date: 2022-04-17 20:36:55
 tags:
 ---
