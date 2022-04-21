@@ -141,7 +141,7 @@ systemctl  stop， start ，restart  docker，老三样
   docker build -t linux git@github.com:Jesse121/mylinux.git
   ```
 
-- doker执行命令
+- doker执行命令（只能执行简单的命令，痛过）
 
   ```
   docker exec [容器名/id] ls
